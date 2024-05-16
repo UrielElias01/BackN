@@ -8,6 +8,7 @@ import validateToken from '../routes/validate-token'; // Importar el middleware 
 import forgotPasswordRoute from '../routes/user'; 
 import { verifyVerificationCode } from '../controllers/user';
 import { resetPassword } from '../controllers/user';
+import { PORT } from './config';
 
 class Server {
     private app: Application;
@@ -23,7 +24,7 @@ class Server {
     }
 
     listen() {
-        this.app.listen(this.port, () => {
+        this.app.listen(PORT, () => {
             console.log('Aplicacion corriendo en el puerto ' + this.port);
         });
     }
